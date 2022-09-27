@@ -53,7 +53,7 @@ const createCard = (country, mainCountry) => {
     console.log(country);
     let countryCard = 
     `
-    <div class="card ${mainCountry ? 'country-card' : 'neighbour'} col col-sm-6 col-lg-3 py-3">
+    <div class="card ${mainCountry ? 'country-card' : 'neighbor'} col col-sm-6 col-lg-3 py-3">
       <img
         src="${country.flags['svg']}"
         class="card-img-top border border-secondary"
@@ -89,7 +89,7 @@ const createCard = (country, mainCountry) => {
         <div class="row justify-content-center mt-5">
             ${countryCard}
         </div>
-        <div class="row justify-content-start neighbour-container">
+        <div class="row justify-content-start neighbor-container">
         </div>
     </div>
     `;
@@ -97,8 +97,7 @@ const createCard = (country, mainCountry) => {
     if(mainCountry){
         document.querySelector('main').insertAdjacentHTML('afterbegin', countryCardsHolder);
     }else{
-        let neighbourDiv = `<div class="card col col-sm-6 col-lg-3 py-3 neighbour">${countryCard}</div>`
-        document.querySelector('.neighbour-container').insertAdjacentHTML("beforeend", countryCard);
+        document.querySelector('.neighbor-container').insertAdjacentHTML("beforeend", countryCard);
     }
 }
 
